@@ -21,6 +21,7 @@ body {
 
 header {
     /* background-color: yellow; */
+    background: white;
     width: 100%;
     height: 80px;
     position: fixed;
@@ -37,7 +38,7 @@ header {
 
 .list-menu {
     display: flex;
-    gap: 2rem;
+    gap: 25px;
 }
 
 .list-menu li {
@@ -61,12 +62,55 @@ header {
 
 /* END HEADER */
 
+/* START MAIN */
+
 main {
-    /* background-color: green; */
+    /* background: green; */
+    background: white;
     width: 100%;
     min-height: 90dvh;
     max-width: 800px;
+    padding: 0 50px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.role-text {
+    color: var(--main-blue);
+}
+
+.list-button {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.list-button button {
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.right {
+    position: relative;
+}
+
+.blob-img {
+    width: 340px;
+}
+
+.rocket-img {
+    width: 240px;
+    position: absolute;
+    left: 0;
+}
+
+/* END MAIN */
+
+/* START FOOTER */
 
 footer {
     /* background-color: purple; */
@@ -74,3 +118,5 @@ footer {
     min-height: 10dvh;
     max-width: 800px;
 }
+
+/* END FOOTER */
