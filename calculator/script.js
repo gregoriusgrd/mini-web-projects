@@ -28,7 +28,15 @@ function tapOperator(operatorValue) {
     if(calculateValue == '') return;
 
     // Prevent consecutive operators
-    if(operators.some(operator => calculateValue.at(-1) == operator))
+    if(operators.some(operator => calculateValue.at(-1) == operator)) {
+        return;
+    }
+
+    // if there is a previous result (and it's not an error), use that result as the starting value
+    if(resultScreen.textContent != '' && resultScreen.textContent != 'Error') {
+        calculateValue = resultScreen.textContent
+        resultScreen.textContent = ''
+    }
 
     addCalculateScreen(operatorValue)
 }
