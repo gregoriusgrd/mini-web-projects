@@ -30,6 +30,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    z-index: 1;
 }
 
 .logo {
@@ -285,3 +286,86 @@ footer a i:hover {
 }
 
 /* END ANIMATION */
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+/* START MEDIA RESPONSIVE */
+
+@media screen and (max-width: 768px){
+    header {
+        padding: 0 25px;
+    }
+
+    .menu-icon {
+        display: block;
+
+        animation: showFade 1s forwards;
+        animation-delay: 1s;
+        opacity: 0;
+    }
+
+    .menu-icon i {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .menu-icon .bx-x {
+        display: none;
+    }
+
+    #menu-toggle:checked + .menu-icon .bx-menu-alt-right {
+        display: none;
+    }
+
+    #menu-toggle:checked + .menu-icon .bx-x {
+        display: block;
+    }
+
+    .list-menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 0px;
+        width: 100%;
+        flex-direction: column;
+        height: 0px;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 20px 20px rgb(0, 0, 0, 0.1);
+        backdrop-filter: blur(25px);
+        overflow: hidden;
+        transition: 0.5s ease;
+    }
+
+    #menu-toggle:checked ~ .list-menu {
+        height: 220px;
+        padding: 25px;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        align-items: start;
+        justify-content: space-evenly;
+        padding: 0 25px;
+        padding-top: 80px;
+    }
+
+    .blob-img {
+        width: 280px;
+    }
+
+    .rocket-img {
+        width: 200px;
+    }
+
+    footer {
+        padding: 30px 25px;
+    }
+}
+
+/* END MEDIA RESPONSIVE */
