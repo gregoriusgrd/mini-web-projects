@@ -3,6 +3,8 @@ const choiceBtns = document.querySelectorAll(".choice-btn")
 const playerChoiceText = document.querySelector(".player-choice-text")
 const cpuChoiceText = document.querySelector(".cpu-choice-text")
 
+const gameTitle = document.querySelector(".game-title")
+
 let playerResultValue = ""
 let cpuResultValue = ""
 
@@ -19,6 +21,8 @@ choiceBtns.forEach((choiceBtn) => {
 
         playerChoiceText.textContent = choiceEmoji[playerResultValue]
         cpuChoiceText.textContent = choiceEmoji[cpuResultValue]
+
+        showResultGame()
     })
 })
 
@@ -28,4 +32,23 @@ function getCpuResultValue() {
 
     const cpuRandomChoice = cpuOptionChoices[Math.floor(Math.random() * cpuOptionChoices.length)]
     return cpuRandomChoice
+}
+
+function showResultGame() {
+    if (playerResultValue == cpuResultValue) {
+        gameTitle.textContent = "Draw!"
+    } else if (
+        playerResultValue == "rock" &&
+        cpuResultValue == "scissors"
+        ||
+        playerResultValue == "paper" &&
+        cpuResultValue == "rock"
+        ||
+        playerResultValue == "scissors" &&
+        cpuResultValue == "paper"
+    ) {
+        gameTitle.textContent = "You Won!"
+    } else {
+        gameTitle.textContent = "You Lost!"
+    }
 }
