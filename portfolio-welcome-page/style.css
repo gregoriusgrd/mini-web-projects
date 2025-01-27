@@ -186,6 +186,11 @@ main::before {
     width: 240px;
     position: absolute;
     left: 0;
+
+    animation: showRight 2s ease forwards;
+    animation-delay: 2.2s;
+    opacity: 0;
+    margin-left: 20px;
 }
 
 /* END MAIN */
@@ -202,10 +207,27 @@ footer {
     display: flex;
     align-items: center;
     gap: 25px;
+    overflow: hidden;
 }
 
 footer a {
     color: rgb(0, 0, 0, 0.7);
+
+    animation: showUp 0.7s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+footer a:nth-child(1) {
+    animation-delay: 2s;
+}
+
+footer a:nth-child(2) {
+    animation-delay: 2.2s;
+}
+
+footer a:nth-child(3) {
+    animation-delay: 2.4s;
 }
 
 footer a i {
@@ -233,6 +255,13 @@ footer a i:hover {
 @keyframes showFade {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes showRight {
+    to {
+        opacity: 1;
+        margin-left: 0px;
     }
 }
 
