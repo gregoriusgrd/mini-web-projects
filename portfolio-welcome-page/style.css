@@ -133,10 +133,19 @@ main::before {
 
 .role-text {
     color: var(--main-blue);
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    margin-top: 4px;
     animation: showUp 0.7s forwards;
     animation-delay: 1.4s;
     opacity: 0;
     transform: translateY(20px);
+    overflow: hidden;
+}
+
+.role-text span {
+    animation: switchRole 3s ease-in-out alternate infinite;
 }
 
 .list-button {
@@ -282,6 +291,22 @@ footer a i:hover {
         transform: translateY(0px);
     } to {
         transform: translateY(20px);
+    }
+}
+
+@keyframes switchRole {
+    0% {
+        transform: translateY(0px);
+    } 20% {
+        transform: translateY(0px);
+    } 40% {
+        transform: translateY(-36px);
+    } 60% {
+        transform: translateY(-36px);
+    } 80% {
+        transform: translateY(-72px);
+    } 100% {
+        transform: translateY(-72px);
     }
 }
 
