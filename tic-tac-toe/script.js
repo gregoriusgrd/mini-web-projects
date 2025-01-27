@@ -38,6 +38,7 @@ function tapCell(cell, index) {
         // Do a random pick if there are no results
         if (!checkWinner()) {
             changePlayer()
+            randomPick()
         }
     }
 }
@@ -50,6 +51,33 @@ function updateCell(cell, index) {
 
 function changePlayer(){
     player = (player == 'X') ? 'O' : 'X'
+}
+
+function randomPick(){
+    // Pause game to allow Computer to pick tile
+    isPauseGame = true
+
+    setTimeout(() => {
+        let randomIndex
+        do {
+            // Pick a random index
+            randomIndex = Math.floor(Math.random() * inputCells.length)
+        } while (
+            // Ensure the chosen cell is empty
+            inputCells[randomIndex] != ''
+        )
+        
+        // Update the cell with Computer move
+        updateCell(cells[randomIndex], randomIndex, player)
+        // Check if computer won
+        if (!checkWinner()) {
+            changePlayer()
+            // Switch back to Human Player
+            isPauseGame = false
+            return
+        }
+        player = (player == 'X') ? 'O' : 'X'
+    }, 1000) // Delay for the computer to move 1 second
 }
 
 function checkWinner() {
