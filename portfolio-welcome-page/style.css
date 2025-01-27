@@ -135,9 +135,29 @@ main::before {
 
 footer {
     /* background-color: purple; */
+    background-color: white;
     width: 100%;
     min-height: 10dvh;
     max-width: 800px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+footer a {
+    color: rgb(0, 0, 0, 0.7);
+}
+
+footer a i {
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer a i:hover {
+    color: black;
+    margin-top: -8px;
 }
 
 /* END FOOTER */
