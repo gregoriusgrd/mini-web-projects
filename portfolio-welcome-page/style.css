@@ -176,6 +176,10 @@ main::before {
 
 .blob-img {
     width: 340px;
+
+    animation: showFade 0.7s forwards;
+    animation-delay: 2s;
+    opacity: 0;
 }
 
 .rocket-img {
@@ -223,6 +227,12 @@ footer a i:hover {
     to {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@keyframes showFade {
+    to {
+        opacity: 1;
     }
 }
 
