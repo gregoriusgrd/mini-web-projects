@@ -89,6 +89,23 @@ function declareWinner(winningIndices) {
     restartBtn.style.visibility = 'visible'
 }
 
+function choosePlayer(selectedPlayer) {
+    // Ensure the game hasn't started
+    if(!isGameStart) {
+        // Override the selected player value
+        player = selectedPlayer
+        if (player == 'X') {
+            // Highlight X display
+            xPlayerDisplay.classList.add('player-active')
+            oPlayerDisplay.classList.remove('player-active')
+        } else {
+            //Hightlight O display
+            oPlayerDisplay.classList.add('player-active')
+            xPlayerDisplay.classList.remove('player-active')
+        }
+    }
+} 
+
 restartBtn.addEventListener('click', () => {
     restartBtn.style.visibility = 'hidden'
     inputCells.fill('')
@@ -100,3 +117,4 @@ restartBtn.addEventListener('click', () => {
     isGameStart = false
     titleHeader.textContent = 'Choose'
 })
+
