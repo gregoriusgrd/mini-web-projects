@@ -20,13 +20,34 @@ const choiceEmoji = {
 
 choiceBtns.forEach((choiceBtn) => {
     choiceBtn.addEventListener("click", () => {
+        choiceBtns.forEach(btn => {
+            btn.computedStyleMap.pointerEvents = "none"
+        })
+
+        gameTitle.textContent = "Let's Play!"
+
+        playerChoiceText.textContent = "✊"
+        cpuChoiceText.textContent = "✊"
+
         playerResultValue = choiceBtn.value
         cpuResultValue = getCpuResultValue()
 
-        playerChoiceText.textContent = choiceEmoji[playerResultValue]
-        cpuChoiceText.textContent = choiceEmoji[cpuResultValue]
+        playerChoiceText.classList.add("player-choice-text-anim")
+        cpuChoiceText.classList.add("cpu-choice-text-anim")
 
-        showResultGame()
+        setTimeout(() => {
+            playerChoiceText.textContent = choiceEmoji[playerResultValue]
+            cpuChoiceText.textContent = choiceEmoji[cpuResultValue]
+
+            playerChoiceText.classList.remove("player-choice-text-anim")
+            cpuChoiceText.classList.remove("cpu-choice-text-anim")
+
+            showResultGame()
+
+            choiceBtns.forEach(btn => {
+                btn.computedStyleMap.pointerEvents = "visible"
+            })
+        },2000)
     })
 })
 
@@ -41,6 +62,7 @@ function getCpuResultValue() {
 function showResultGame() {
     if (playerResultValue == cpuResultValue) {
         gameTitle.textContent = "Draw!"
+        scoreDrawText.textContent++
     } else if (
         playerResultValue == "rock" &&
         cpuResultValue == "scissors"
@@ -52,7 +74,9 @@ function showResultGame() {
         cpuResultValue == "paper"
     ) {
         gameTitle.textContent = "You Won!"
+        scoreWonText.textContent++
     } else {
         gameTitle.textContent = "You Lost!"
+        scoreLostText.textContent++
     }
 }
