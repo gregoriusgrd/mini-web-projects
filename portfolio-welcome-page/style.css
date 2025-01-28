@@ -188,7 +188,7 @@ main::before {
 }
 
 .blob-img {
-    width: 340px;
+    width: 400px;
 
     animation: showFade 0.7s forwards;
     animation-delay: 2s;
@@ -196,7 +196,7 @@ main::before {
 }
 
 .rocket-img {
-    width: 240px;
+    width: 100%;
     position: absolute;
     left: 0;
 
