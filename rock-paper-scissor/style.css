@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* :root {
-    --main-yellow: #FFD55D;
-} */
+:root {
+    --main-bg: #F7F5EB;   /* Soft beige */
+    --card-bg: #FFF9F0;   /* Slightly lighter panel */
+    --text-color: #3E442B; /* Deep earthy brown */
+    --accent: #74A57F;    /* Tropical green */
+    --btn-bg: #E3DCC2;    /* Soft sand */
+    --btn-hover: #A3C9A8; /* Light jungle green */
+    --shadow: rgba(0, 0, 0, 0.1);
+}
 
 * {
     font-family: "Poppins", sans-serif;
@@ -12,7 +18,8 @@
 }
 
 body {
-    background-color: linear-gradient(180deg, white, #F2F2F2);
+    background: var(--main-bg);
+    color: var(--text-color);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -21,21 +28,22 @@ body {
 }
 
 main {
-    background-color: white;
+    background-color: var(--card-bg);
     width: 450px;
     padding: 32px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 24px;
-    margin: 16px;
+    box-shadow: 0px 4px 12px var(--shadow);
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid var(--accent);
 }
 
 .main-header {
-    /* border: solid; */
-    background-color: #FFD55D;
+    background: var(--accent);
     padding: 12px;
-    border-radius: 24px;
-    text-align: center;
-    border: solid 4px #FFEDB9;
+    border-radius: 12px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
 }
 
 .results-display {
@@ -43,37 +51,22 @@ main {
     justify-content: space-between;
     padding: 24px;
     align-items: center;
-}
-
-.player-choice-text, .cpu-choice-text {
-    font-size: 80px;
-    position: relative;
-}
-
-.player-choice-text {
-    transform: rotate(90deg) rotateY(180deg);
-}
-
-.player-choice-text-anim {
-    animation: player-shake-result 0.4s ease alternate infinite;
-}
-
-.cpu-choice-text {
-    transform: rotate(-90deg);
-}
-
-.cpu-choice-text-anim {
-    animation: cpu-shake-result 0.4s ease alternate infinite;
+    font-size: 48px;
 }
 
 .versus-text {
-    font-size: 32px;
-    color: #D9D9D9;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: bold;
 }
 
 .score-board {
     display: flex;
     justify-content: space-around;
+    background: var(--btn-bg);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 16px 0;
 }
 
 .score-board h4 {
@@ -82,6 +75,8 @@ main {
 
 .divider-vertical {
     width: 2px;
+    background: var(--accent);
+    height: 20px;
 }
 
 .options-choice {
@@ -90,32 +85,30 @@ main {
     margin-top: 24px;
 }
 
-.options-choice:hover .option-wrapper:not(:hover) {
-    opacity: 0.5;
-    transform: scale(0.9);
-}
-
 .option-wrapper {
-    transition: 0.3s;
+    text-align: center;
 }
 
 .choice-btn {
     width: 100px;
     height: 70px;
-    border-radius: 99px;
-    background: none;
-    border: solid 2px #F2F2F2;
+    border-radius: 12px;
+    background: var(--btn-bg);
+    border: solid 2px var(--accent);
     font-size: 32px;
     cursor: pointer;
     transition: 0.3s;
+    color: var(--text-color);
+    box-shadow: 0 4px 8px var(--shadow);
 }
 
 .choice-btn:hover {
-    background-color: #E0E0E0;
+    background-color: var(--btn-hover);
+    color: #fff;
+    transform: scale(1.05);
 }
 
 .choice-label {
-    text-align: center;
     margin-top: 8px;
     font-weight: 600;
 }
@@ -132,6 +125,14 @@ main {
     }
 }
 
+.player-choice-text-anim{
+    animation: player-shake-result 0.3s ease-in-out infinite alternate;
+}
+
+.player-choice-text {
+    transform: rotate(90deg) rotateY(180deg);
+}
+
 @keyframes cpu-shake-result {
     from {
         bottom: 5px;
@@ -144,3 +145,10 @@ main {
     }
 }
 
+.cpu-choice-text-anim {
+    animation: cpu-shake-result 0.3s ease-in-out infinite alternate;
+}
+
+.cpu-choice-text {
+    transform: rotate(-90deg);
+}
