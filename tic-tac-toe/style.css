@@ -117,13 +117,19 @@ main {
     background-color: var(--button-bg-color);
     padding: 12px;
     border: none;
-    border-radius: 15px;
+    border-radius: 16px;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
     visibility: hidden;
     transition: 0.3s background;
     text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    animation: showUp 0.7s forwards;
+    animation-delay: 0.9s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 #restartBtn:hover {
