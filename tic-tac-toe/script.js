@@ -100,13 +100,13 @@ function checkWinner() {
 }
 
 function declareDraw() {
-    titleHeader.textContent = 'Draw!'
+    titleHeader.textContent = 'Draw! 😭'
     isPauseGame = true
     restartBtn.style.visibility = 'visible'
 }
 
 function declareWinner(winningIndices) {
-    titleHeader.textContent = `${player} Win`
+    titleHeader.textContent = `${player} Win 🥳`
     isPauseGame = true
 
     // Highlight winning cells
@@ -117,7 +117,7 @@ function declareWinner(winningIndices) {
     restartBtn.style.visibility = 'visible'
 }
 
-function choosePlayer(selectedPlayer) {
+function pickPlayer(selectedPlayer) {
     // Ensure the game hasn't started
     if(!isGameStart) {
         // Override the selected player value
@@ -143,6 +143,6 @@ restartBtn.addEventListener('click', () => {
     })
     isPauseGame = false
     isGameStart = false
-    titleHeader.textContent = 'Choose'
+    titleHeader.textContent = 'Pick'
 })
 

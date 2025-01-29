@@ -17,6 +17,8 @@
     box-sizing: border-box;
     user-select: none;
     color: white;
+
+    transition: 0.3 ease-in-out;
 }
 
 main {
@@ -31,7 +33,7 @@ main {
 
 #header {
     display: flex;
-    width: 320px;
+    width: 380px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
@@ -133,7 +135,7 @@ main {
     font-weight: 600;
     color: var(--text-color);
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 /* CELL ANIMATION */
