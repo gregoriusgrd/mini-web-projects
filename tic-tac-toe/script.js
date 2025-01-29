@@ -46,7 +46,7 @@ function tapCell(cell, index) {
 function updateCell(cell, index) {
     cell.textContent = player
     inputCells[index] = player
-    cell.style.color = (player == 'X') ? '#1892EA' : '#A737FF'
+    cell.style.color = (player == 'X') ? '#2A7F62' : '#E67E22'
 }
 
 function changePlayer(){
@@ -111,7 +111,7 @@ function declareWinner(winningIndices) {
 
     // Highlight winning cells
     winningIndices.forEach((index) =>
-        cells[index].style.background = '#2A2343'
+        cells[index].style.background = '#A3D9C5'
     )
 
     restartBtn.style.visibility = 'visible'

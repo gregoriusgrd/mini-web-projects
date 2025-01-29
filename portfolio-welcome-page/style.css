@@ -21,6 +21,7 @@ body {
 
 header {
     /* background-color: yellow; */
+    border: solid;
     background: white;
     width: 100%;
     height: 80px;
@@ -142,6 +143,7 @@ main::before {
     opacity: 0;
     transform: translateY(20px);
     overflow: hidden;
+    border: solid;
 }
 
 .role-text span {
@@ -188,7 +190,7 @@ main::before {
 }
 
 .blob-img {
-    width: 400px;
+    width: 340px;
 
     animation: showFade 0.7s forwards;
     animation-delay: 2s;
@@ -196,7 +198,7 @@ main::before {
 }
 
 .rocket-img {
-    width: 100%;
+    width: 240px;
     position: absolute;
     left: 0;
 
