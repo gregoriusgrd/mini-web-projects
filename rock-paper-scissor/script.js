@@ -73,10 +73,10 @@ function showResultGame() {
         playerResultValue == "scissors" &&
         cpuResultValue == "paper"
     ) {
-        gameTitle.textContent = "You Won!"
+        gameTitle.textContent = "You Won! 🥳"
         scoreWonText.textContent++
     } else {
-        gameTitle.textContent = "You Lost!"
+        gameTitle.textContent = "You Lose! 😭"
         scoreLostText.textContent++
     }
 }
