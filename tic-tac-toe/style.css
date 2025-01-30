@@ -257,3 +257,39 @@ main {
         font-size: 18px;
     }
 }
+
+/* For medium devices (601px to 768px) */
+@media screen and (max-width: 768px) and (min-width: 601px) {
+    #header {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    #header .player {
+        width: 70px;
+        height: 70px;
+        font-size: 45px;
+    }
+
+    #board {
+        grid-template-columns: repeat(3, 110px);
+        grid-template-rows: repeat(3, 110px);
+        gap: 12px;
+    }
+
+    #board .cell {
+        font-size: 45px;
+    }
+
+    #restartBtn {
+        width: 220px;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    #titleHeader {
+        font-size: 22px;
+    }
+}
