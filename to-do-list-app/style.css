@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #4A90E2;
+    --primary-color: #788CDE;
     --secondary-color: #50E3C2;
-    --background-gradient: linear-gradient(135deg, #4A90E2, #50E3C2);
-    --card-bg: #ffffff;
-    --text-color: #333;
-    --button-bg: #ff4757;
+    --background-gradient: #212121;
+    --card-bg: #1C1C1C;
+    --text-color: #EAEAEA;
+    --button-bg: #788CDE;
     --button-hover: #e84118;
-    --input-bg: #f1f1f1;
-    --input-border: #ccc;
-    --checked-color: #888;
+    --input-bg: #2A2A2A;
+    --input-border: #34495E;
+    --checked-color: #7F8C8D;
 }
 
 * {
@@ -36,7 +36,7 @@
     background: var(--card-bg);
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .todo-app h2 {
@@ -69,6 +69,7 @@ input {
     background: transparent;
     padding: 10px;
     font-size: 16px;
+    color: var(--text-color);
 }
 
 button {
@@ -96,6 +97,7 @@ ul li {
     position: relative;
     border-bottom: 1px solid var(--input-border);
     transition: 0.3s;
+    color: var(--text-color);
 }
 
 ul li:last-child {
