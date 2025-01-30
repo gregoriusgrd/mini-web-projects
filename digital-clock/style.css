@@ -84,3 +84,23 @@
 #seconds::after {
     content: 'Seconds';
 }
+
+@media (max-width: 768px) {
+    .clock span {
+        font-size: 70px;
+    }
+
+    .container {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock span {
+        font-size: 50px;
+    }
+
+    .container {
+        height: 120px;
+    }
+}
