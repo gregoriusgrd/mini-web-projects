@@ -113,7 +113,7 @@ body {
     background-color: var(--result-bg-color) !important;
 }
 
-/* Media Responsive */
+/* MEDIA QUERY */
 @media (max-width: 900px) {
     .container {
         padding: 20px;
