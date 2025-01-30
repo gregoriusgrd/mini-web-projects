@@ -293,3 +293,39 @@ main {
         font-size: 22px;
     }
 }
+
+/* For larger devices (1025px and up) */
+@media screen and (min-width: 1025px) {
+    #header {
+        width: 380px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px;
+    }
+
+    #header .player {
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+    }
+
+    #board {
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(3, 120px);
+        gap: 12px;
+    }
+
+    #board .cell {
+        font-size: 50px;
+    }
+
+    #restartBtn {
+        width: 235px;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    #titleHeader {
+        font-size: 24px;
+    }
+}
