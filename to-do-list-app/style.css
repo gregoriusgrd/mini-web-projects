@@ -38,15 +38,25 @@
     padding: 40px 30px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+    animation: showUp 0.7s forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.todo-app h2 {
+#title {
     color: var(--primary-color);
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
     margin-bottom: 20px;
+
+    animation: showUp 0.7s forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .todo-app h2 img {
@@ -63,6 +73,11 @@
     border-radius: 12px;
     margin-bottom: 25px;
     /* border: 1px solid var(--input-border); */
+
+    animation: showUp 0.7s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .row:hover {
@@ -107,6 +122,14 @@ ul li {
     color: var(--text-color);
     background: var(--input-bg);
     border-radius: 12px;
+
+    animation: showUp 0.7s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+ul li:not(:first-child) {
     margin-top: 8px;
 }
 
@@ -160,3 +183,13 @@ ul li span:hover {
     background: var(--secondary-color);
     color: #fff;
 }
+
+/* ANIMATION */
+
+@keyframes showUp {
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
