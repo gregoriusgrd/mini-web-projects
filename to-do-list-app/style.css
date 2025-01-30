@@ -7,9 +7,10 @@
     --card-bg: #1C1C1C;
     --text-color: #EAEAEA;
     --button-bg: #788CDE;
-    --button-hover: #e84118;
+    --button-hover: #4d6adf;
     --input-bg: #2A2A2A;
     --input-border: #34495E;
+    --input-hover: #363636;
     --checked-color: #7F8C8D;
 }
 
@@ -57,9 +58,13 @@
     justify-content: space-between;
     background: var(--input-bg);
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 12px;
     margin-bottom: 25px;
     border: 1px solid var(--input-border);
+}
+
+.row:hover {
+    background-color: var(--input-hover);
 }
 
 input {
@@ -80,7 +85,7 @@ button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 12px;
     transition: background 0.3s ease;
 }
 
@@ -91,13 +96,15 @@ button:hover {
 ul li {
     list-style: none;
     font-size: 18px;
-    padding: 12px 8px 12px 40px;
+    padding: 16px 12px 16px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
     border-bottom: 1px solid var(--input-border);
     transition: 0.3s;
     color: var(--text-color);
+    background: var(--input-bg);
+    border-radius: 12px;
 }
 
 ul li:last-child {
@@ -105,8 +112,7 @@ ul li:last-child {
 }
 
 ul li:hover {
-    background: var(--input-bg);
-    border-radius: 5px;
+    background-color: var(--input-hover);
 }
 
 ul li::before {
@@ -114,7 +120,7 @@ ul li::before {
     position: absolute;
     height: 24px;
     width: 24px;
-    border-radius: 50%;
+
     background-image: url(assets/unchecked.png);
     background-size: cover;
     background-position: center;
