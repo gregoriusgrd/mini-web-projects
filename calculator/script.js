@@ -1,66 +1,68 @@
 const calculateScreen = document.querySelector('.calculate')
 const resultScreen = document.querySelector('.result')
 
-// Variable to store the calculation value
+// Variable to store the current calculation value
 let calculateValue = ''
 
-// Array of valid operators
+// Array of valid operators for the calculator
 const operators = ['%', '/', '+', '-', '*']
 
-// Function called when a number is pressed
+// Function called when a number button is pressed
 function tapNum(numValue) {
-    // Prevent a decimal point from being added when string is empty
+    // Prevent adding a decimal point if the string is empty
     if(calculateValue == '' && numValue == '.' ){
         return;
     }
 
-    // Prevent consecutive decimal points from being added
+    // Prevent adding consecutive decimal points
     if(calculateValue.at(-1) == '.' && numValue == '.') {
         return;
     }
 
-    // Add the number to the calculation screen
+    // Add the number to the calculation string and update the screen
     addCalculateScreen(numValue)
 }
-// Function called when an operator is pressed
+
+// Function called when an operator button is pressed
 function tapOperator(operatorValue) {
-    // Do not allow an operator if the calculation is empty
+    // Do not allow an operator if the calculation string is empty
     if(calculateValue == '') return;
 
-    // Prevent consecutive operators
+    // Prevent consecutive operators from being added
     if(operators.some(operator => calculateValue.at(-1) == operator)) {
         return;
     }
 
-    // if there is a previous result (and it's not an error), use that result as the starting value
+    // If there's a previous result, use it as the starting value for the next calculation
     if(resultScreen.textContent != '' && resultScreen.textContent != 'Error') {
         calculateValue = resultScreen.textContent
         resultScreen.textContent = ''
     }
 
+    // Add the operator to the calculation string and update the screen
     addCalculateScreen(operatorValue)
 }
 
-//function called when the equals (=) button is pressed
+// Function called when the equals (=) button is pressed to calculate the result
 function tapResult() {
     try {
+        // Evaluate the calculation string and display the result
         resultScreen.textContent = eval(calculateValue)
     } catch(e) {
+        // If there's an error, display 'Error' on the result screen
         resultScreen.textContent = 'Error'
     }
 }
 
-//function called when the clear (AC) button is pressed
+// Function called when the clear (AC) button is pressed to reset everything
 function tapClear() {
-    // Clear the calculation value
+    // Reset the calculation value and clear the screens
     calculateValue = ''
-
-    // Reset the calculation and result screen
     calculateScreen.textContent = calculateValue
     resultScreen.textContent = ''
 }
 
-// function called when the delete (DEL) button is pressed
+// Function called when the delete (DEL) button is pressed to remove the last character
 function tapDel(){
     // Remove the last character from the calculation string
     calculateValue = calculateValue.slice(0, -1)
@@ -68,13 +70,13 @@ function tapDel(){
     // Clear the result screen
     resultScreen.textContent = ''
 
-    // Update the calculation screen
+    // Update the calculation screen with the new value
     calculateScreen.textContent = calculateValue
 }
 
-// Function to add a value to the calculation screen
+// Function to update the calculation screen with the current value
 function addCalculateScreen(value) {
-    // Append the value to the calculation string
+    // Append the new value to the calculation string
     calculateValue += value
     // Update the calculation screen display
     calculateScreen.textContent = calculateValue
