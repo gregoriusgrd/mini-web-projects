@@ -217,3 +217,43 @@ main {
         transform: translateY(0px);
     }
 }
+
+/* Responsive Layout */
+
+/* For small devices (up to 600px) */
+@media screen and (max-width: 600px) {
+    #header {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    #header .player {
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+        margin: 5px;
+    }
+
+    #board {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 10px;
+    }
+
+    #board .cell {
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    #restartBtn {
+        width: 200px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #titleHeader {
+        font-size: 18px;
+    }
+}
