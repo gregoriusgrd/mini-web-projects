@@ -8,12 +8,12 @@
     --operator-bg: rgba(0, 0, 0, 0.15);
     --operator-hover-bg: rgba(0, 0, 0, 0.25);
     --button-font-color: white;
-    --button-font-size: 24px;
+    --button-font-size: 32px;
     --result-bg-color: #28B6F6;
     --screen-text-color: rgba(255, 255, 255, 0.75);
-    --screen-font-size: 24px;
-    --calculate-font-size: 32px;
-    --button-border-radius: 12px;
+    --screen-font-size: 32px;
+    --calculate-font-size: 40px;
+    --button-border-radius: 16px;
     --container-bg: rgba(0, 0, 0, 0.15);
     --container-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.25);
 }
@@ -40,13 +40,13 @@ body {
 .container {
     background-color: var(--container-bg);
     backdrop-filter: blur(40px);
-    padding: 16px;
+    padding: 24px;
     border-radius: 16px;
     box-shadow: var(--container-box-shadow);
 }
 
 .screen {
-    height: 140px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -65,13 +65,13 @@ body {
 
 .button-box {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
     gap: 8px;
 }
 
 .button-box button {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     background: var(--button-bg);
     border: none;
     border-radius: var(--button-border-radius);
@@ -86,6 +86,11 @@ body {
     background-color: var(--button-hover-bg);
 }
 
+.operator-btn {
+    color: #28B6F6;
+    font-weight: 900;
+}
+
 .button-box .operator-btn {
     background-color: var(--operator-bg) !important;
     font-weight: 600 !important;
@@ -96,7 +101,7 @@ body {
 }
 
 .button-box .letter-btn {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .button-box .nol-btn {
